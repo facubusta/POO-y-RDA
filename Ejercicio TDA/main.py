@@ -1,4 +1,6 @@
 from paquetes.preceptores import *
+from paquetes.alumnos import *
+
 alumnos = []
 cursos = []
 ejecutar = True
@@ -89,7 +91,7 @@ while ejecutar:
                 print(f"No hay preceptores que solo estén en el año {año}.")
         
         case "7":
-            pass
+            mostrar_alumnos_joven_y_grande(alumnos)
                 
         case "0":
             print("Se salió del ejercicio")
