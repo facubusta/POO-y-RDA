@@ -2,7 +2,7 @@ from paquetes.preceptores import *
 from paquetes.alumnos import *
 
 alumnos = []
-cursos = []
+cursos = {}
 ejecutar = True
 
 while ejecutar:
@@ -45,13 +45,13 @@ while ejecutar:
                 division = input("Ingresa la división del curso: ")
                 preceptor = input("Ingresa el nombre del preceptor: ")
                 cantidad_alumnos = int(input("Ingresa la cantidad de alumnos: "))
-                curso = {
-                    "año_division": (año, division),
+                cursos[(año, division)] = {
                     "cantidad_alumnos": cantidad_alumnos,
-                    "preceptor": preceptor
-                }
-                cursos.append(curso)
+                    "preceptor": preceptor }
                 print(f"Curso {año} {division} agregado correctamente.")
+            for clave, detalles in cursos.items():
+                print(f"Curso: {clave[0]} {clave[1]}")
+                print(f"Preceptor: {detalles['preceptor']}, Cantidad de alumnos: {detalles['cantidad_alumnos']}")
         
         case "3":
             preceptores = set() 
